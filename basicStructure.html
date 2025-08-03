@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NestLeap - Room Rental & Buying</title>
-  <link rel="stylesheet" href="basicStructer2.css" />
   <style>
     body {
       margin: 0;
@@ -186,7 +185,7 @@
   <div class="container-wrapper" id="property-listings"></div>
 
   <!-- Script -->
- <script>
+  <script>
   let allProperties = [];
 
   fetch('data.json')
@@ -222,7 +221,6 @@
   }
 
   document.getElementById('searchBtn').addEventListener('click', function () {
-    // ✅ GET INPUT VALUES FIRST
     const location = document.getElementById('location').value.trim().toLowerCase();
     const type = document.getElementById('type').value.trim().toLowerCase();
     const size = document.getElementById('size').value.trim().toLowerCase();
