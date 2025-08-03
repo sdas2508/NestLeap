@@ -186,62 +186,68 @@
   <div class="container-wrapper" id="property-listings"></div>
 
   <!-- Script -->
-  <script>
-    let allProperties = [];
+ <script>
+  let allProperties = [];
 
-    fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        allProperties = data;
-        displayProperties(data);
-      })
-      .catch(error => console.error('Error loading data:', error));
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      allProperties = data;
+      displayProperties(data);
+    })
+    .catch(error => console.error('Error loading data:', error));
 
-    function displayProperties(properties) {
-      const container = document.getElementById('property-listings');
-      container.innerHTML = '';
+  function displayProperties(properties) {
+    const container = document.getElementById('property-listings');
+    container.innerHTML = '';
 
-      if (properties.length === 0) {
-        container.innerHTML = '<p>No matching properties found.</p>';
-        return;
-      }
-
-      properties.forEach(prop => {
-        const card = document.createElement('div');
-        card.className = 'container';
-        card.innerHTML = `
-          <img src="${prop.image}" alt="Property Image" />
-          <h3>${prop.name}</h3>
-          <p>Location: ${prop.location}</p>
-          <p>Price: ${prop.price}</p>
-          <p>Size: ${prop.size}</p>
-          <p>Type: ${prop.type}</p>
-        `;
-        container.appendChild(card);
-      });
+    if (properties.length === 0) {
+      container.innerHTML = '<p>No matching properties found.</p>';
+      return;
     }
 
-    document.getElementById('searchBtn').addEventListener('click', function () {
-      const location = document.getElementById('location').value.trim();
-      const type = document.getElementById('type').value.trim().toLowerCase();
-      const size = document.getElementById('size').value.trim();
-      const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
-      const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
-
-      const filtered = allProperties.filter(p => {
-        const propertyPrice = parseInt(p.price.replace(/[^0-9]/g, ''));
-        const propertyType = p.type.trim().toLowerCase();
-
-        return (location === 'Select Location' || p.location === location) &&
-               (type === 'select type' || propertyType === type) &&
-               (size === 'Select Size' || p.size === size) &&
-               (propertyPrice >= minPrice) &&
-               (propertyPrice <= maxPrice);
-      });
-
-      displayProperties(filtered);
+    properties.forEach(prop => {
+      const card = document.createElement('div');
+      card.className = 'container';
+      card.innerHTML = `
+        <img src="${prop.image}" alt="Property Image" />
+        <h3>${prop.name}</h3>
+        <p>Location: ${prop.location}</p>
+        <p>Price: ${prop.price}</p>
+        <p>Size: ${prop.size}</p>
+        <p>Type: ${prop.type}</p>
+      `;
+      container.appendChild(card);
     });
-  </script>
+  }
+
+  document.getElementById('searchBtn').addEventListener('click', function () {
+    // ✅ GET INPUT VALUES FIRST
+    const location = document.getElementById('location').value.trim().toLowerCase();
+    const type = document.getElementById('type').value.trim().toLowerCase();
+    const size = document.getElementById('size').value.trim().toLowerCase();
+    const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+    const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+
+    const filtered = allProperties.filter(p => {
+      const propertyLocation = p.location.trim().toLowerCase();
+      const propertyType = p.type.trim().toLowerCase();
+      const propertySize = p.size.trim().toLowerCase();
+      const propertyPrice = parseInt(p.price.replace(/[^0-9]/g, ''));
+
+      return (
+        (location === "select location" || propertyLocation.includes(location)) &&
+        (type === "select type" || propertyType === type) &&
+        (size === "select size" || propertySize === size) &&
+        propertyPrice >= minPrice &&
+        propertyPrice <= maxPrice
+      );
+    });
+
+    displayProperties(filtered);
+  });
+</script>
+
   <footer style="background-color: #222; color: white; padding: 20px; text-align: center;">
   <p>&copy; 2025 NestLeap Private Limited. All rights reserved.</p>
   
