@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Skyline Flat",
+    "location": "Delhi",
+    "price": "₹55 Lakhs",
+    "size": "2BHK",
+    "type": "Flat",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEswXhTt81csC8kPtd9b4e0SCOhzfJmyZqtw&s"
+  },
+  {
+    "name": "Palm Heights",
+    "location": "Navi Mumbai",
+    "price": "₹65 Lakhs",
+    "size": "3BHK",
+    "type": "Flat",
+    "image": "https://www.momondo.in/rimg/himg/0c/d8/74/ice-32444-60141552_3XL-935817.jpg?width=968&height=607&crop=true"
+  },
+  {
+    "name": "Urban Bliss",
+    "location": "Bangalore",
+    "price": "₹58 Lakhs",
+    "size": "2BHK",
+    "type": "Flat",
+    "image": "https://r1imghtlak.mmtcdn.com/2d55f540-a293-40c4-b1a2-d1946c7e1ca2.png"
+  },
+  {
+    "name": "Green Pearl",
+    "location": "Yerwada,Pune",
+    "price": "₹50 Lakhs",
+    "size": "1BHK",
+    "type": "Flat",
+    "image": "https://media.easemytrip.com/media/Hotel/SHL-230823408322476/Common/CommonDpkRVd.jpg"
+  },
+  {
+    "name": "Heritage Homes",
+    "location": "Kundannagar, Hyderabad",
+    "price": "₹60 Lakhs",
+    "size": "3BHK",
+    "type": "Flat",
+    "image": "https://house-of-heritage-ankani-staay.hyderabad-hotel.com/data/Photos/OriginalPhoto/15973/1597348/1597348716/hyderabad-photo-6.JPEG"
+  },
+
+  {
+    "name": "Sunview Apartments",
+    "location": "Tilaknagar, Mumbai",
+    "price": "₹75 Lakhs",
+    "size": "3BHK",
+    "type": "Apartment",
+    "image": "https://imagecdn.99acres.com/media1/26150/6/523006687M-1739008263274.webp"
+  },
+  {
+    "name": "Serene Residency",
+    "location": "Tambaram, Chennai",
+    "price": "₹62 Lakhs",
+    "size": "2BHK",
+    "type": "Apartment",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyyKmxBCluwnqt06ZomE7gRjvjz-DXnaKd9w&s"
+  },
+  {
+    "name": "Cosmic Nest",
+    "location": "Rajarhat, Kolkata",
+    "price": "₹70 Lakhs",
+    "size": "3BHK",
+    "type": "Apartment",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFj3Hq09M2kpM7TZJ4Pqkt7bORN-v_z972JQ&s"
+  },
+  {
+    "name": "Galaxy Apartments",
+    "location": "Ahmedabad",
+    "price": "₹48 Lakhs",
+    "size": "2BHK",
+    "type": "Apartment",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmZeBb8HFxJ5EbBWg5bwtjQJvUhVGtszFZew&s"
+  },
+  {
+    "name": "Green Meadows",
+    "location": "Indore",
+    "price": "₹53 Lakhs",
+    "size": "2BHK",
+    "type": "Apartment",
+    "image": "https://imagecdn.99acres.com/media1/31063/10/621270105M-1752952629791.webp"
+  },
+
+  {
+    "name": "PG Delight",
+    "location": "Bangalore",
+    "price": "₹8,000/month",
+    "size": "Shared",
+    "type": "PG",
+    "image": "https://img.staticmb.com/mbphoto/pg/grd2/cropped_images/2021/Dec/22/Photo_h400_w540/GR2-259785-1215495_400_540.jpg"
+  },
+  {
+    "name": "Comfort PG",
+    "location": "Delhi",
+    "price": "₹7,500/month",
+    "size": "Shared",
+    "type": "PG",
+    "image": "https://content.jdmagicbox.com/v2/comp/delhi/i7/011pxx11.xx11.160708172510.n4i7/catalogue/the-comfort-pg-noida-sector-62-noida-paying-guest-accommodations-4knuy5ga2e.jpg"
+  },
+  {
+    "name": "Elite PG",
+    "location": "Hyderabad",
+    "price": "₹9,000/month",
+    "size": "Private",
+    "type": "PG",
+    "image": "https://orionhostels.com/wp-content/uploads/2022/09/Orion-Pegasus-Double-sharing-PG-in-Hudson-Lane-scaled.jpg"
+  },
+  {
+    "name": "StayEase PG",
+    "location": "Pimri, Pune",
+    "price": "₹8,500/month",
+    "size": "Shared",
+    "type": "PG",
+    "image": "https://images.jdmagicbox.com/v2/comp/chennai/x3/pwfl1515155978w1d6x3/catalogue/ladies-pg-paying-guest-hostel-sirucheri-chennai-hostels-for-women-gkhvy.jpg"
+  },
+  {
+    "name": "Peace PG",
+    "location": "Old Mahabalipuraam ,Chennai",
+    "price": "₹7,000/month",
+    "size": "Shared",
+    "type": "PG",
+    "image": "https://www.peaceandplentyservices.in/wp-content/uploads/2025/04/Best-PG-in-Gandhinagar.webp"
+  },
+
+  {
+    "name": "1BHK Room – Delhi",
+    "location": "Pratap Nagar, Delhi",
+    "price": "₹9,500/month",
+    "size": "1BHK",
+    "type": "Room Rent",
+    "image": "https://justflatsandapartment.wordpress.com/wp-content/uploads/2014/10/1bhk-for-rent-in-delhi.jpg"
+  },
+  {
+    "name": "2BHK Rent – Mumbai",
+    "location": "Andheri ,East Mumbai",
+    "price": "₹18,000/month",
+    "size": "2BHK",
+    "type": "Room Rent",
+    "image": "https://nestaway-houses-assets.nestaway.com/uploads/images/thumb_large_c98d85e0-63d1-4ebe-bc6c-2d6f13a81e16.jpeg"
+  },
+  {
+    "name": "Budget 1BHK",
+    "location": "Chennai",
+    "price": "₹8,000/month",
+    "size": "1BHK",
+    "type": "Room Rent",
+    "image": "https://images.nobroker.in/images/8a9f96838b311d43018b318cb7981d34/8a9f96838b311d43018b318cb7981d34_442909_74284_medium.jpg"
+  },
+  {
+    "name": "Sharing 2BHK",
+    "location": "Bangalore",
+    "price": "₹12,000/month",
+    "size": "2BHK",
+    "type": "Room Rent",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/600493381.jpg?k=aa6f05ebb924176840d2e05f31d41f1b1e40d3e5d07b35d561c7f8f7d2aa1612&o=&hp=1"
+  },
+  {
+    "name": "Urban Nest",
+    "location": "Ballygaunge, Kolkata",
+    "price": "₹10,000/month",
+    "size": "1BHK",
+    "type": "Room Rent",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA4YCsZzAqyojO2SOikXzj4Vv5eu5_oDj4iw&s"
+  },
+
+  {
+    "name": "Elite Villa",
+    "location": "Gachibowli, Hyderabad",
+    "price": "₹1.2 Cr",
+    "size": "4BHK",
+    "type": "Villa",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7-bATbmDFSi7JOcOxYussZFG1eyePxUoOfQ&s"
+  },
+  {
+    "name": "Royal Retreat",
+    "location": "Phase III, Hinjewadi, Pune",
+    "price": "₹1.5 Cr",
+    "size": "5BHK",
+    "type": "Villa",
+    "image": "https://gos3.ibcdn.com/69968ed4d1af11ec835a0a58a9feac02.jpg"
+  },
+  {
+    "name": "Lake View Villa",
+    "location": "Udaipur",
+    "price": "₹1.8 Cr",
+    "size": "3BHK",
+    "type": "Villa",
+    "image": "https://udaipurpoolvilla.com/wp-content/uploads/2024/04/Private-Villas-in-Udaipur4.jpg"
+  },
+  {
+    "name": "Ocean Breeze Villa",
+    "location": "Goa",
+    "price": "₹2 Cr",
+    "size": "4BHK",
+    "type": "Villa",
+    "image": "https://luxurystays.in/villas/villa-sea-breeze/sea-breeze-11.jpg"
+  },
+  {
+    "name": "Heritage Villa",
+    "location": "Jaipur",
+    "price": "₹1.4 Cr",
+    "size": "3BHK",
+    "type": "Villa",
+    "image": "https://www.holidify.com/images/cmsuploads/compressed/352709973_20221014181714.jpg"
+  }
+]

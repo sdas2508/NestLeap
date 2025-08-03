@@ -1,0 +1,45 @@
+<div id="propertyList"></div>
+
+<div id="propertyDetails" style="display:none;">
+  <button onclick="closeDetails()">Back</button>
+  <h2 id="propTitle"></h2>
+  <p><strong>Owner:</strong> <span id="propOwner"></span></p>
+  <p><strong>Phone:</strong> <span id="propPhone"></span></p>
+  <p><strong>Amenities:</strong> <span id="propAmenities"></span></p>
+</div>
+
+<script>
+fetch('http://localhost:8080/api/properties')
+  .then(res => res.json())
+  .then(data => {
+    let html = '';
+    data.forEach(p => {
+      html += `<div>
+        <h3>${p.name}</h3>
+        <p>${p.location}</p>
+        <button onclick='loadDetails(${p.id})'>View Details</button>
+      </div>`;
+    });
+    document.getElementById('propertyList').innerHTML = html;
+  });
+
+function loadDetails(id) {
+  fetch(`http://localhost:8080/api/properties/${id}`)
+    .then(res => res.json())
+    .then(p => {
+      document.getElementById('propTitle').textContent = p.name;
+      document.getElementById('propOwner').textContent = p.owner;
+      document.getElementById('propPhone').textContent = p.phone;
+      document.getElementById('propAmenities').textContent = p.amenities;
+
+      document.getElementById('propertyList').style.display = 'none';
+      document.getElementById('propertyDetails').style.display = 'block';
+    });
+}
+
+function closeDetails() {
+  document.getElementById('propertyDetails').style.display = 'none';
+  document.getElementById('propertyList').style.display = 'block';
+}
+</script>
+    

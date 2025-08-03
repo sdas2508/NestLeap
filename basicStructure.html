@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NestLeap - Room Rental & Buying</title>
+  <link rel="stylesheet" href="basicStructer2.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+    }
+
+    nav.nav {
+      background-color: #16a085;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    nav.nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav.nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .brand-container {
+      text-align: center;
+      padding: 30px 10px 10px;
+    }
+
+    .logo {
+      font-size: 48px;
+      font-weight: 700;
+      color: #2c3e50;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #16a085;
+    }
+
+    .slogan {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #555;
+      font-style: italic;
+    }
+
+    .img {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .searchBar {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .searchRow {
+      margin: 10px;
+    }
+
+    .searchRow select,
+    .searchRow input {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    #searchBtn {
+      padding: 10px 20px;
+      background-color: #16a085;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .container-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .container {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+    }
+
+    .container img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="nav">
+    <ul>
+      <li><a href="basicStructure.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="signin.html">Sign In / Log In</a></li>
+    </ul>
+  </nav>
+
+  <!-- Branding -->
+  <div class="brand-container">
+    <div class="logo">Nest<span>Leap</span></div>
+    <div class="slogan">Leap into your next nest.</div>
+
+  <!-- Search Bar -->
+  <div class="searchBar">
+    <div class="searchRow">
+      <select id="location">
+        <option>Select Location</option>
+        <option>Kolkata</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+        <option>Hyderabad</option>
+        <option>Gurgaon</option>
+        <option>Mumbai</option>
+        <option>New Delhi</option>
+        <option>Pune</option>
+        <option>Jaipur</option>
+        <option>Chandigarh</option>
+        <option>Goa</option>
+        <option>Noida</option>
+        <option>Guwahati</option>
+        <option>Ahmedabad</option>
+        <option>Bhubaneswar</option>
+      </select>
+    </div>
+
+    <div class="searchRow">
+      <select id="type">
+        <option>Select Type</option>
+        <option>Flat</option>
+        <option>Apartment</option>
+        <option>PG</option>
+        <option>Room Rent</option>
+        <option>Villa</option>
+      </select>
+
+      <select id="size">
+        <option>Select Size</option>
+        <option>1RK</option>
+        <option>1BHK</option>
+        <option>2BHK</option>
+        <option>3BHK</option>
+        <option>4BHK</option>
+      </select>
+    </div>
+
+    <div class="searchRow">
+      <input type="number" id="minPrice" placeholder="Min Price">
+      <input type="number" id="maxPrice" placeholder="Max Price">
+    </div>
+
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <hr>
+
+  <!-- Property Listings -->
+  <div class="container-wrapper" id="property-listings"></div>
+
+  <!-- Script -->
+  <script>
+    let allProperties = [];
+
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        allProperties = data;
+        displayProperties(data);
+      })
+      .catch(error => console.error('Error loading data:', error));
+
+    function displayProperties(properties) {
+      const container = document.getElementById('property-listings');
+      container.innerHTML = '';
+
+      if (properties.length === 0) {
+        container.innerHTML = '<p>No matching properties found.</p>';
+        return;
+      }
+
+      properties.forEach(prop => {
+        const card = document.createElement('div');
+        card.className = 'container';
+        card.innerHTML = `
+          <img src="${prop.image}" alt="Property Image" />
+          <h3>${prop.name}</h3>
+          <p>Location: ${prop.location}</p>
+          <p>Price: ${prop.price}</p>
+          <p>Size: ${prop.size}</p>
+          <p>Type: ${prop.type}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    document.getElementById('searchBtn').addEventListener('click', function () {
+      const location = document.getElementById('location').value.trim();
+      const type = document.getElementById('type').value.trim().toLowerCase();
+      const size = document.getElementById('size').value.trim();
+      const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+      const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+
+      const filtered = allProperties.filter(p => {
+        const propertyPrice = parseInt(p.price.replace(/[^0-9]/g, ''));
+        const propertyType = p.type.trim().toLowerCase();
+
+        return (location === 'Select Location' || p.location === location) &&
+               (type === 'select type' || propertyType === type) &&
+               (size === 'Select Size' || p.size === size) &&
+               (propertyPrice >= minPrice) &&
+               (propertyPrice <= maxPrice);
+      });
+
+      displayProperties(filtered);
+    });
+  </script>
+  <footer style="background-color: #222; color: white; padding: 20px; text-align: center;">
+  <p>&copy; 2025 NestLeap Private Limited. All rights reserved.</p>
+  
+  <div style="margin-top: 10px;">
+    <a href="about.html" style="color: #ccc; margin: 0 15px; text-decoration: none;">About Us</a>
+    <a href="contact.html" style="color: #ccc; margin: 0 15px; text-decoration: none;">Contact Us</a>
+    <a href="privacy.html" style="color: #ccc; margin: 0 15px; text-decoration: none;">Privacy Policy</a>
+  </div>
+</footer>
+
+
+</body>
+</html>

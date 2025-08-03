@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="signin1.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sign In Form -->
+        <form id="signinForm">
+            <h2>Sign In</h2>
+            <input type="text" id="signinUsername" required placeholder="Enter Username">
+            <input type="password" id="signinPassword" required placeholder="Enter Password">
+            <button type="submit">Login</button>
+            <p class="new-user">New User? <a href="#" id="createAccount">Create an account</a></p>
+        </form>
+
+        <!-- Registration Form (Hidden Initially) -->
+        <form id="signupForm" class="hidden">
+            <h2>Create Account</h2>
+            <input type="text" id="username" required placeholder="Enter Username">
+            <input type="password" id="password" required placeholder="Enter Password">
+            <input type="tel" id="mobile" required placeholder="Enter Mobile Number">
+            <button type="submit">Register</button>
+            <p class="new-user"><a href="#" id="backToSignin">Back to Sign In</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("createAccount").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("signinForm").classList.add("hidden");
+            document.getElementById("signupForm").classList.remove("hidden");
+        });
+
+        document.getElementById("backToSignin").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("signupForm").classList.add("hidden");
+            document.getElementById("signinForm").classList.remove("hidden");
+        });
+    </script>
+</body>
+</html>
